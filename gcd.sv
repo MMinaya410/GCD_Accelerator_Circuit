@@ -3,7 +3,7 @@ typedef enum logic [1:0]{
     IDLE = 2'b00,
     DIV = 2'b01,
     RESULT = 2'b10
-	//your states here (if you so choose)
+	
 } state;
 
 module gcd #(
