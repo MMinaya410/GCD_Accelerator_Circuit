@@ -18,18 +18,12 @@ module gcd #(
 	    output logic			ready_o				// ready out - outputs a 1'b1 when ready for new values, and a 1'b0 when computing a new GCD
     );
 
-	/*
-	* At the top of the file is where you typically declare signals that are used internally in the module
-	*/
-
     logic[WIDTH-1:0] c_ind,a_ind,b_ind,gcd_ind, a_next, b_next, gcd_next;
 	state state_next, state;
 	
 	
-	/*
- 	* This block is where you will write RTL to change the value of your registers (ie your sequential logic)
- 	*/
-	always_ff @(posedge clk_i) begin	//this line tells the block to evaluate on the positive (rising) edge of the clock signal
+	
+	always_ff @(posedge clk_i) begin	
 		if (reset_i) begin
             state <= IDLE;
             a_ind <= 8'd0;
@@ -47,9 +41,7 @@ module gcd #(
 	end
 
 
-	/*
- 	* This block is where you will write RTL for combinational logic
-  	*/
+
 	always_comb begin
 
         case (state)
